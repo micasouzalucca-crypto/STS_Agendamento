@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento LifeClin - Plataforma de Pré-Agendamento</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho com Logo à Esquerda e Título no Centro -->
+        <header class="header">
+            <!-- Novo contêiner flexível para alinhar a logo e o título -->
+            <div class="header-content">
+                <!-- Logo à Esquerda -->
+                <img src="logo_lifeclin.png" alt="Logo LifeClin" class="logo-img">
+                
+                <!-- Título Centralizado -->
+                <h1 class="header-title">AGENDAMENTO LIFECLIN</h1>
+                
+                <!-- Placeholder invisível para centralizar o título (será configurado no CSS) -->
+                <div class="logo-placeholder-spacer"></div>
+            </div>
+            
+            <p class="header-description">Plataforma de Pré-Agendamento de Exames Ocupacionais</p>
+        </header>
+
+        <main class="form-card">
+            <h2>Solicitação de Pré-Agendamento</h2>
+            <!-- ********* LINHA CRÍTICA ALTERADA ********* -->
+            <!-- Adicionamos o atributo 'action' para o Formspree. SUBSTITUA ESTA URL! -->
+            <form id="agendamentoForm" action="https://formspree.io/f/mjkdzkwn" method="POST">
+                
+                <!-- SEÇÃO 1: DADOS DA EMPRESA E SOLICITANTE -->
+                <section class="form-section">
+                    <h3>1. Dados da Empresa Solicitante</h3>
+                    <div class="form-group">
+                        <label for="razaoSocial">Razão Social da Empresa: <span class="required">*</span></label>
+                        <input type="text" id="razaoSocial" name="Razão Social da Empresa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cnpjCpf">CNPJ/CPF (Responsável): <span class="required">*</span></label>
+                        <input type="text" id="cnpjCpf" name="CNPJ/CPF" required placeholder="00.000.000/0000-00 ou 000.000.000-00">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone de Contato: <span class="required">*</span></label>
+                        <input type="tel" id="telefone" name="Telefone" required placeholder="(XX) XXXXX-XXXX">
+                    </div>
+                    <!-- NOVO CAMPO: Tipo de Pagamento (Convênio/Particular) -->
+                    <div class="form-group">
+                        <label for="tipoPagamento">Tipo de Pagamento: <span class="required">*</span></label>
+                        <select id="tipoPagamento" name="Tipo de Pagamento" required>
+                            <option value="">Selecione a Opção</option>
+                            <option value="Convenio">Convênio (Empresa Parceira)</option>
+                            <option value="Particular">Particular (Boleto/Faturamento)</option>
+                        </select>
+                    </div>
+                    <!-- O campo de email de contato foi removido conforme solicitado -->
+                </section>
+
+                <!-- SEÇÃO 2: DADOS DO PACIENTE E EXAME -->
+                <section class="form-section">
+                    <h3>2. Detalhes do Paciente e Exame</h3>
+                    <div class="form-group">
+                        <label for="nomePaciente">Nome Completo do Paciente (Funcionário): <span class="required">*</span></label>
+                        <input type="text" id="nomePaciente" name="Nome do Paciente" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataNascimento">Data de Nascimento do Paciente: <span class="required">*</span></label>
+                        <input type="date" id="dataNascimento" name="Data de Nascimento" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoExame">Tipo do Exame: <span class="required">*</span></label>
+                        <select id="tipoExame" name="Tipo de Exame" required>
+                            <option value="">Selecione o Tipo</option>
+                            <option value="Admissional">Admissional</option>
+                            <option value="Demissional">Demissional</option>
+                            <option value="Periodico">Periódico</option>
+                            <option value="MudancaFuncao">Mudança de Função</option>
+                            <option value="RetornoTrabalho">Retorno ao Trabalho</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="examesComplementares">Exames Complementares (Opcional):</label>
+                        <textarea id="examesComplementares" name="Exames Complementares" rows="3" placeholder="Ex: Audiometria, Acuidade Visual, Espirometria, etc."></textarea>
+                    </div>
+                </section>
+
+                <!-- SEÇÃO 3: AGENDAMENTO E OBSERVAÇÕES -->
+                <section class="form-section">
+                    <h3>3. Agendamento e Observações</h3>
+                    <div class="form-group">
+                        <label for="dataPreferencial">Data Preferencial para Agendamento: <span class="required">*</span></label>
+                        <input type="date" id="dataPreferencial" name="Data Preferencial" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="turnoPreferencial">Turno Preferencial: <span class="required">*</span></label>
+                        <select id="turnoPreferencial" name="Turno Preferencial" required>
+                            <option value="">Selecione o Turno</option>
+                            <option value="Manha">Manhã (07:00h - 12:00h)</option>
+                            <option value="Tarde">Tarde (13:00h - 17:00h)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="observacoes">Observações Adicionais:</label>
+                        <textarea id="observacoes" name="Observações Adicionais" rows="4" placeholder="Informações relevantes sobre o agendamento ou paciente."></textarea>
+                    </div>
+                    <div class="alert-info orange-bg">
+                        <p><strong>IMPORTANTE:</strong> O paciente deve comparecer levando <strong>documento de identificação com CPF</strong> (ou foto legível do documento) para peenchimento correto do ASO.</p>
+                    </div>
+                </section>
+                
+                <button type="submit" id="submitButton">
+                    Enviar Solicitação de Pré-Agendamento
+                </button>
+                <div id="messageBox" class="message-box hidden"></div>
+            </form>
+        </main>
+    </div>
+    <!-- NOVO: Biblioteca IMask.js para máscaras de entrada -->
+    <script src="https://unpkg.com/imask@7.1.3/dist/imask.js"></script>
+    <!-- Link para o arquivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

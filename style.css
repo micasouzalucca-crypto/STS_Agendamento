@@ -1,0 +1,272 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7f9; /* Fundo bem claro */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Cores da LifeClin */
+:root {
+    --color-primary: #28A745; /* Verde LifeClin (Ação) */
+    --color-accent: #FFC107; /* Laranja LifeClin (Alerta) */
+    --color-white: #ffffff;
+    --color-dark: #343a40; /* Cinza Escuro (para texto) */
+    --color-gray-light: #e9ecef;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* Cabeçalho */
+.header {
+    background: var(--color-primary); /* Fundo Verde Primário */
+    color: var(--color-white);
+    padding: 30px 40px;
+    text-align: center;
+    border-bottom: 5px solid #1e7e34; /* Verde mais escuro */
+}
+
+/* Contêiner Flex para Logo e Título */
+.header-content {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Espalha os itens */
+    margin-bottom: 10px;
+}
+
+/* Estilos para a Imagem da Logo - ALTURA AUMENTADA */
+.logo-img {
+    height: 70px; /* Altura da logo AUMENTADA conforme solicitado */
+    width: auto;
+}
+
+/* Espaçador invisível para centralizar o título - AJUSTADO */
+.logo-placeholder-spacer {
+    height: 70px;
+    width: 70px; /* Mesma largura da logo para equilibrar o título */
+}
+
+/* Estilos para o Título Centralizado */
+.header-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-white); 
+    /* O flexbox centraliza este item automaticamente */
+}
+
+.header-description {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+/* Cartão do Formulário (Restante do CSS inalterado, mantendo as cores LifeClin) */
+.form-card {
+    padding: 40px;
+    background-color: var(--color-white);
+}
+
+.form-card h2 {
+    color: var(--color-dark);
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    text-align: center;
+    border-bottom: 2px solid var(--color-gray-light);
+    padding-bottom: 15px;
+}
+
+/* Seções do Formulário */
+.form-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid var(--color-gray-light);
+    border-radius: 12px;
+    background-color: #fcfcfc;
+}
+
+.form-section h3 {
+    font-size: 1.3rem;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-primary); /* Linha Verde primária */
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.required {
+    color: #dc3545; /* Mantendo vermelho para obrigatório */
+    font-size: 1.1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.15); /* Sombra Verde no foco */
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Botão de Envio (Verde LifeClin) */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(145deg, var(--color-primary), #1e7e34); /* Gradiente Verde */
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    margin-top: 30px;
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(145deg, #1e7e34, var(--color-primary));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(40, 167, 69, 0.5);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+/* Mensagem de Alerta (Observação - Laranja LifeClin) */
+.alert-info {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-left: 5px solid var(--color-accent);
+}
+
+.orange-bg {
+    background-color: rgba(255, 193, 7, 0.15); /* Laranja claro */
+    color: #856404;
+}
+
+.alert-info strong {
+    color: var(--color-dark);
+}
+
+/* Caixa de Mensagens do JavaScript */
+.message-box {
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.message-box.success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.message-box.error {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsividade (Mobile First) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .header {
+        padding: 20px 15px;
+        text-align: left; /* Altera o alinhamento no mobile */
+    }
+    
+    .header-content {
+        justify-content: flex-start; /* No mobile, alinha tudo à esquerda */
+        gap: 20px; /* Aumentado ligeiramente para a nova logo maior */
+    }
+    
+    .header-title {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+    
+    /* Remove o espaçador no mobile */
+    .logo-placeholder-spacer {
+        display: none;
+    }
+
+    .form-card {
+        padding: 20px 15px;
+    }
+
+    .form-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-section {
+        padding: 15px;
+    }
+
+    button[type="submit"] {
+        padding: 14px;
+        font-size: 1.05rem;
+    }
+}
