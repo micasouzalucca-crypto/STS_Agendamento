@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // *******************************************************************
     // NOVO: URL DE REDIRECIONAMENTO APÓS SUCESSO. SUBSTITUA ESTE VALOR!
-    const REDIRECT_URL = 'SUA_NOVA_URL'; 
+    const REDIRECT_URL = 'https://micasouzalucca-crypto.github.io/STS_Agendamento/'; 
     // Exemplo: 'https://www.lifeclin.com.br/contato' ou 'https://wa.me/5599999999999'
     // *******************************************************************
 
